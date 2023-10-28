@@ -21,7 +21,7 @@ class AccountTest {
 
         @Test
         fun `account balance of 0`() {
-            assertEquals(0, account?.getBalanceInCentsProperty()?.get())
+            assertEquals(0, account?.balanceInCentsProperty()?.get())
         }
     }
 
@@ -38,7 +38,7 @@ class AccountTest {
 
         @Test
         fun `should have an account name`() {
-            assertEquals(name, account?.name?.get())
+            assertEquals(name, account?.nameProperty()?.get())
         }
     }
 
