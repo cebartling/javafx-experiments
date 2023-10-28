@@ -1,9 +1,9 @@
 package com.pintailconsultingllc.propertiesandbindings
 
-import javafx.beans.property.SimpleDoubleProperty
+import javafx.beans.property.ReadOnlyDoubleWrapper
 import javafx.beans.property.SimpleStringProperty
 
 class Account {
-    val balance = SimpleDoubleProperty(0.0)
+    val balance = ReadOnlyDoubleWrapper(0.0)
     val name = SimpleStringProperty("")
 }
