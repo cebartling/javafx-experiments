@@ -9,27 +9,37 @@ import org.junit.jupiter.api.Test
 class AccountTest {
 
     @Nested
-    @DisplayName("Account balance tests")
+    @DisplayName("Account balance")
     class AccountBalanceTests {
-        var account: Account? = null
+        private val name = "Foobar Checking"
+        private var account: Account? = null
 
         @BeforeEach
         fun beforeEachTest() {
-            account = Account()
+            account = Account(name = name, balanceInCents = 0)
         }
 
         @Test
         fun `account balance of 0`() {
-            assertEquals(0.0, account?.balance?.get())
+            assertEquals(0, account?.getBalanceInCents()?.get())
         }
     }
 
-//    @Test
-//    fun `test account`() {
-//        val account = Account()
-//        account.name.set("Checking")
-//        account.balance.set(100.0)
-//        assertEquals("Checking", account.name.get())
-//        assertEquals(100.0, account.balance.get())
-//    }
+    @Nested
+    @DisplayName("Account name")
+    class AccountNameTests {
+        private val name = "Foobar Checking"
+        private var account: Account? = null
+
+        @BeforeEach
+        fun beforeEachTest() {
+            account = Account(name = name, balanceInCents = 0)
+        }
+
+        @Test
+        fun `should have an account name`() {
+            assertEquals(name, account?.name?.get())
+        }
+    }
+
 }
