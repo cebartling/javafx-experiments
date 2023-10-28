@@ -21,7 +21,7 @@ class AccountTest {
 
         @Test
         fun `account balance of 0`() {
-            assertEquals(0, account?.getBalanceInCents()?.get())
+            assertEquals(0, account?.getBalanceInCentsProperty()?.get())
         }
     }
 

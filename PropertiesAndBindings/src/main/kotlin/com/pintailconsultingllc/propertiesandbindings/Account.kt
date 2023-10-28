@@ -5,10 +5,10 @@ import javafx.beans.property.SimpleStringProperty
 
 class Account(name: String, balanceInCents: Int) {
 
-    private val balanceInCents = ReadOnlyIntegerWrapper(0)
-    val name = SimpleStringProperty("")
+    private val balanceInCents = ReadOnlyIntegerWrapper(this, "balanceInCents", 0)
+    val name = SimpleStringProperty(this, "name", "")
 
-    fun getBalanceInCents() = balanceInCents.readOnlyProperty
+    fun getBalanceInCentsProperty() = balanceInCents.readOnlyProperty
 
     init {
         this.name.set(name)
